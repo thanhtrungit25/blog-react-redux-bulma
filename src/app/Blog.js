@@ -1,5 +1,6 @@
 import React from 'react';
 import * as contentful from 'contentful';
+import BlogItem from './blog/BlogItem';
 
 class Blog extends React.Component {
   state = {
@@ -31,7 +32,7 @@ class Blog extends React.Component {
         <p>This is the Blog Page</p>
         <br />
         {this.state.posts.map(({ fields }, i) => (
-          <pre key={i}>{JSON.stringify(fields, null, 2)}</pre>
+          <BlogItem key={i} {...fields} />
         ))}
       </div>
     );
