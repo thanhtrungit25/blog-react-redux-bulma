@@ -8,9 +8,11 @@ import registerServiceWorker from './registerServiceWorker';
 // Redux store
 import { Provider } from 'react-redux';
 import { configureStore } from './store';
+import { loadBlog } from './store/Blog';
 
 const store = configureStore();
 console.log(store.getState());
+store.dispatch(loadBlog());
 
 ReactDOM.render(
   <Provider store={store}>
