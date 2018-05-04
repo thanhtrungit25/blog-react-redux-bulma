@@ -7,6 +7,7 @@ const BlogItem = props => (
     <BlogContent limit={150} {...props}>
       <BlogNav
         isBack={false}
+        status={props.status}
         date={props.date}
         to={{
           pathname: `/blog/${props.path}`,

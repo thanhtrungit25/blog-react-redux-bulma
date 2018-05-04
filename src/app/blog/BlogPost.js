@@ -10,7 +10,12 @@ const BlogPost = ({
 }) => {
   return (
     <PageContent>
-      <BlogNav date={props.date} to="/blog" isBack={true} />
+      <BlogNav
+        date={props.date}
+        to="/blog"
+        status={props.status}
+        isBack={true}
+      />
       <BlogContent {...props} />
     </PageContent>
   );
