@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from './components/PageHeader';
 import PageContent from './components/PageContent';
 import axios from 'axios';
+import MediumItem from './medium/MediumItem';
 
 class Medium extends React.Component {
   state = {
@@ -64,7 +65,7 @@ class Medium extends React.Component {
           </a>
         </PageHeader>
         <PageContent>
-          <pre>{JSON.stringify(this.state.posts, null, 2)}</pre>
+          {this.state.posts.map(post => <MediumItem key={post.id} {...post} />)}
         </PageContent>
       </div>
     );
