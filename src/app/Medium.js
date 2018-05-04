@@ -26,6 +26,7 @@ class Medium extends React.Component {
         Object.assign(
           {},
           {
+            id,
             title,
             createdAt,
             subtitle: virtuals.subtitle,
@@ -57,6 +58,7 @@ class Medium extends React.Component {
             className="button is-inverted is-outlined"
             href="https://medium.com/@aaron.klaser"
             target="_blank"
+            rel="noopener noreferrer"
           >
             View My Medium
             <span className="icon" style={{ marginLeft: 5 }}>
