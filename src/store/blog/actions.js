@@ -1,8 +1,8 @@
 import * as types from './types';
 
-export function loadBlogSuccess(post) {
+export function loadBlogSuccess(posts) {
   return {
     type: types.LOAD_BLOG_SUCCESS,
-    post,
+    posts,
   };
 }
