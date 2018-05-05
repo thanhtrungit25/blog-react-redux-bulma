@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Loader } from './components/Loader';
 import BlogItem from './blog/BlogItem';
 import PageHeader from './components/PageHeader';
 import PageContent from './components/PageContent';
@@ -16,11 +17,15 @@ class Blog extends React.Component {
           <strong>project walkthroughs</strong>.
         </PageHeader>
         <br />
-        <PageContent>
-          {this.props.blog.posts.map(({ fields }, i) => (
-            <BlogItem key={i} {...fields} />
-          ))}
-        </PageContent>
+        {this.props.blog.loading ? (
+          <Loader className="has-text-primary">Loading</Loader>
+        ) : (
+          <PageContent>
+            {this.props.blog.posts.map(({ fields }, i) => (
+              <BlogItem key={i} {...fields} />
+            ))}
+          </PageContent>
+        )}
       </div>
     );
   }

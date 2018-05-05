@@ -13,7 +13,7 @@ export function loadBlog() {
     return client
       .getEntries()
       .then(({ items }) => {
-        dispatch(actions.loadBlogSuccess(items));
+        setTimeout(() => dispatch(actions.loadBlogSuccess(items)), 5000);
       })
       .catch(error => {
         console.log(error);
