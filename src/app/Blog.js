@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BlogItem from './blog/BlogItem';
 import PageHeader from './components/PageHeader';
+import PageContent from './components/PageContent';
 
 class Blog extends React.Component {
   render() {
@@ -15,9 +16,11 @@ class Blog extends React.Component {
           <strong>project walkthroughs</strong>.
         </PageHeader>
         <br />
-        {this.props.blog.posts.map(({ fields }, i) => (
-          <BlogItem key={i} {...fields} />
-        ))}
+        <PageContent>
+          {this.props.blog.posts.map(({ fields }, i) => (
+            <BlogItem key={i} {...fields} />
+          ))}
+        </PageContent>
       </div>
     );
   }
