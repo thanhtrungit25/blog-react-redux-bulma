@@ -7,14 +7,17 @@ const client = contentful.createClient({
     '3c4a374b63c19c010b795fd05903cd282fac1f68c5383d04e6563dca17c4ed7d',
 });
 
-const error = err => console.log(err);
-
 export function loadBlog() {
-  return dispatch =>
-    client
+  return dispatch => {
+    dispatch(actions.blogLoading());
+    return client
       .getEntries()
       .then(({ items }) => {
         dispatch(actions.loadBlogSuccess(items));
       })
-      .catch(error);
+      .catch(error => {
+        console.log(error);
+        dispatch(actions.blogLoading(false));
+      });
+  };
 }
