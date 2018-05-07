@@ -3,4 +3,8 @@ export default {
     loading: false,
     posts: [],
   },
+  mediums: {
+    loading: false,
+    posts: [],
+  },
 };
